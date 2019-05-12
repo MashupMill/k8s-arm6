@@ -13,9 +13,9 @@ RUN cd /tmp/kubernetes \
     && make all WHAT=cmd/kube-proxy KUBE_VERBOSE=5 KUBE_BUILD_PLATFORMS=linux/arm \
     && make all WHAT=cmd/kubelet KUBE_VERBOSE=5 KUBE_BUILD_PLATFORMS=linux/arm \
     && make all WHAT=cmd/kubectl KUBE_VERBOSE=5 KUBE_BUILD_PLATFORMS=linux/arm \
+    && make all WHAT=cmd/kubeadm KUBE_VERBOSE=5 KUBE_BUILD_PLATFORMS=linux/arm \
     && mkdir -p /build \
-    && cp _output/local/bin/linux/arm/* /build \
-    && rm -fr /tmp/kubernetes
+    && cp _output/local/bin/linux/arm/* /build
 
 FROM alpine:latest
 
